@@ -1,5 +1,5 @@
 /*
-Problem_Solving_Time : AM 08:36 -09:53
+Problem_Solving_Time : AM 08:36 - 09:53
 
 ppap
 
@@ -18,6 +18,16 @@ pppapap
 
 PPAP -> P 로 바꿔서 이게 P or NP 인지 판단
 
+//수정
+//구지 ppap 에서 p 가 ppap 로 변경되는 경우르 찾을 빌요는 없고,
+
+그냥 string 문자를 받은 것을 그대로
+넣은 뒤에 ppap 글자를 충족하는 지 확인하고
+p 문자로 변경한뒤 이를 계속 진행한다
+이러면 문제의 조건과 로직을 만족하므로
+출력값이 잘 나온다.
+
+다
 
 
 */
@@ -33,9 +43,9 @@ int main(void) {
     cin >> s;
 
     vector<vector<bool>> cmp(3);
-    cmp[0].resize(4); cmp[0] = { 1,1,0,1 };
-    cmp[1].resize(7); cmp[1] = { 1,1,0,1,1,0,1 };
-    cmp[2].resize(7); cmp[2] = { 1,1,1,0,1,0,1 };
+    vector<bool>cmp(4);
+    cmp = {true, true, false, true};
+    //cmp[0].resize(4); cmp[0] = { 1,1,0,1 }
 
     vector<bool> temp(s.size());
     for (int i = 0; i < s.size(); i++)
@@ -47,7 +57,7 @@ int main(void) {
         if (st.size() >= 4) {
             bool match = true;
             for (int j = 0; j < 4; j++) {
-                if (st[st.size() - 4 + j] != cmp[0][j]) {
+                if (st[st.size() - 4 + j] != cmp[j]) {
                     match = false;
                     break;
                 }
