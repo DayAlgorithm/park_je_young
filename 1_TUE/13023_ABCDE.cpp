@@ -1,27 +1,27 @@
 /*
-Problem_Solving_Time AM 11:46 - 
+Problem_Solving_Time AM 11:46 - PM 1:53
 
-A-B-C-D-E °°ÀÌ
+A-B-C-D-E ê°™ì´
 
-5¸í, ¼­·Î ´Ù Ä£±¸ÀÌ¸é Åë°ú ¾Æ´Ï¸é ÆÐ½º.
+5ëª…, ì„œë¡œ ë‹¤ ì¹œêµ¬ì´ë©´ í†µê³¼ ì•„ë‹ˆë©´ íŒ¨ìŠ¤.
 
-±íÀÌ ¿ì¼± Å½»öÇÏ¿©
+ê¹Šì´ ìš°ì„  íƒìƒ‰í•˜ì—¬
 
-Á¡Â÷ °ÅµìµÈ ¹æÇâÀ¸·Î ³Ñ¾î°¥½Ã, ½ºÅÃ +1
+ì ì°¨ ê±°ë“­ëœ ë°©í–¥ìœ¼ë¡œ ë„˜ì–´ê°ˆì‹œ, ìŠ¤íƒ +1
 
-½ºÅÃÀÌ 4¸é true·Î ÇÏ¿© ÀÛµ¿ ÁßÁö
+ìŠ¤íƒì´ 4ë©´ trueë¡œ í•˜ì—¬ ìž‘ë™ ì¤‘ì§€
 
-¾Æ´Ï¸é ¹Ù·Î 0 Ãâ·Â
+ì•„ë‹ˆë©´ ë°”ë¡œ 0 ì¶œë ¥
 
-±Ùµ¥ ÀÔ·ÂÀÌ ·£´ýÀ¸·Î µé¾î°¡¹Ç·Î,
+ê·¼ë° ìž…ë ¥ì´ ëžœë¤ìœ¼ë¡œ ë“¤ì–´ê°€ë¯€ë¡œ,
 
-----------ÁøÀÔÂ÷¼ö¸¦ ¼³Á¤ÇØÁà¾ßÇÔ.
+----------ì§„ìž…ì°¨ìˆ˜ë¥¼ ì„¤ì •í•´ì¤˜ì•¼í•¨.
 
-----------"ÁøÀÔÂ÷¼ö¸¸" ¼³Á¤ÇØÁÖ°í for ¹® µ¹·Á¼­ dfs ¿¡ ³Ö¾îÁÖ°í 
+----------"ì§„ìž…ì°¨ìˆ˜ë§Œ" ì„¤ì •í•´ì£¼ê³  for ë¬¸ ëŒë ¤ì„œ dfs ì— ë„£ì–´ì£¼ê³  
 
-(À§¿¡ ¼±À¸·Î Ç¥½ÃÇÑ ºÎºÐÀº ±×³É º¤ÅÍ »çÀÌÁî·Î ÁøÀÔÂ÷¼ö ¼³Á¤ °¡´É)
+(ìœ„ì— ì„ ìœ¼ë¡œ í‘œì‹œí•œ ë¶€ë¶„ì€ ê·¸ëƒ¥ ë²¡í„° ì‚¬ì´ì¦ˆë¡œ ì§„ìž…ì°¨ìˆ˜ ì„¤ì • ê°€ëŠ¥)
 
-Àç±Í ÇÔ¼ö¸¦ ÅëÇÏ¿© Å½»öÀ» ½ÃµµÇÑ´Ù.
+ìž¬ê·€ í•¨ìˆ˜ë¥¼ í†µí•˜ì—¬ íƒìƒ‰ì„ ì‹œë„í•œë‹¤.
 
 */
 
@@ -34,10 +34,10 @@ vector<vector<int>> node;
 vector<bool> visited;
 
 bool dfs(int x, int t) {
-    if (t == 4)        // °£¼± 4°³ Å½»ö ¼º°ø
+    if (t == 4)        // ê°„ì„  4ê°œ íƒìƒ‰ ì„±ê³µ
         return true;
 
-    // ÀÎÁ¢ ¸®½ºÆ®¸¦ ÆÄ±«ÇÏÁö ¾Ê°í ¼øÈ¸
+    // ì¸ì ‘ ë¦¬ìŠ¤íŠ¸ë¥¼ íŒŒê´´í•˜ì§€ ì•Šê³  ìˆœíšŒ
     for (int i = 0; i < node[x].size(); ++i) {
         int f = node[x][i];
         if (visited[f])
@@ -45,7 +45,7 @@ bool dfs(int x, int t) {
         visited[f] = true;
         if (dfs(f, t + 1))
             return 1;
-        visited[f] = false;    //¹éÆ®·¡Å·
+        visited[f] = false;    //ë°±íŠ¸ëž˜í‚¹
     }
     return 0;
 }
@@ -59,7 +59,7 @@ int main(void) {
     node.resize(n);
     visited.resize(n, false);
 
-    // ¹«Çâ ±×·¡ÇÁ °£¼± ÀÔ·Â
+    // ë¬´í–¥ ê·¸ëž˜í”„ ê°„ì„  ìž…ë ¥
     for (int i = 0; i < m; ++i) {
         int start, end;
         cin >> start >> end;
@@ -67,7 +67,7 @@ int main(void) {
         node[end].push_back(start);
     }
 
-    // ¸ðµç Á¤Á¡À» ½ÃÀÛÁ¡À¸·Î DFS ½Ãµµ
+    // ëª¨ë“  ì •ì ì„ ì‹œìž‘ì ìœ¼ë¡œ DFS ì‹œë„
     for (int i = 0; i < n; ++i) {
         visited[i] = true;
         if (dfs(i, 0)) {
