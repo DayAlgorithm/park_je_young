@@ -1,6 +1,6 @@
 /*
 
-2:40
+Problem_Solving_Time PM 2:40 - 3:30
 
 */
 
@@ -14,10 +14,13 @@ vector<pair<int,int>>arr;//key : abs, value
 void push(int x) {
 	arr.push_back({abs(x),x});
 	int i = arr.size() - 1;
+
+	//heapify_push
 	while (i > 0) {
 		int parent = i - 1;
 		parent /= 2;
 		int k1 = arr[parent].first, k2 = arr[i].first;
+		
 		int v1 = arr[parent].second, v2 = arr[i].second;
 		if (k1 > k2 || (k1 == k2 && v1 > v2)) {
 			swap(arr[parent], arr[i]);
