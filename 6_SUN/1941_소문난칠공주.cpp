@@ -39,7 +39,7 @@
 using namespace std;
 
 vector<string> map;
-// 5×5 격자
+// 55 격자
 
 int dx[4] = { 0, 0, -1, 1 }, dy[4] = { 1, -1, 0, 0 };
 
