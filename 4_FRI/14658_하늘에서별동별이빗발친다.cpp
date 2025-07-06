@@ -1,3 +1,9 @@
+/*
+* PST PM 00:38 - PM 2:22
+* 
+* 로직은 사진 첨부
+* 
+*/
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -25,7 +31,7 @@ long long MAX_subset = 0;
 
 vector<PR>node;
 vector<TP>node_data;
-//{ idx, ��ǥ }
+//{ idx, 좌표 }
 
 vector<data_struct>set_x, set_y;
 
